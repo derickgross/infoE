@@ -62,7 +62,7 @@ app.get('/favorites', function(req, res, next) {
   var listings = app.favoriteListings.getFavorites();
 
   for (var i = 0; i < listings.length; i++) {
-    listings[0].setIsFavorite(true);
+    listings[i].setIsFavorite(true);
   }
 
   res.render('favorites', {
