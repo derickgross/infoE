@@ -48,7 +48,10 @@ Listing.fromJSON = function(json) {
 }
 
 Listing.prototype.formatPrice = function() {
-  return this.price.toFixed(2);
+  //return this.price.toFixed(2);
+  const priceString = `${currency_symbols[this.currency]}${this.price.toFixed(2)} ${this.currency_code}`
+  // return `${currency_symbols[this.currency]}${this.price.toFixed(2)} ${this.currency_code}`
+  return priceString;
 };
 
 Listing.prototype.setIsFavorite = function(is_favorite) {
