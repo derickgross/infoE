@@ -81,9 +81,7 @@ app.post('/favorite-listing', function(req, res, next) {
     .then(function(response) {
       var results = JSON.parse(response);
       var listing = Listing.fromJSON(results.results[0])
-      if (!app.favoriteListings.isListingFavorited(listing)) {
-        app.favoriteListings.addListing(listing)
-      }
+      app.favoriteListings.addListing(listing)
       
       res.json({status: "success"});
     })

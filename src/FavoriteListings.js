@@ -12,11 +12,13 @@ FavoriteListings.prototype.isListingFavorited = function(listing) {
 }
 
 FavoriteListings.prototype.addListing = function(listing) {
-  this.listings.push(listing);
+	if (!this.listings.includes(listing)) {
+		this.listings.push(listing);
+	}
 };
 
 FavoriteListings.prototype.removeListing = function(listing) {
-
+	this.listings = this.listings.filter(x => x.listings_id !== listing.listings_id)
 };
 
 FavoriteListings.prototype.getFavorites = function() {
