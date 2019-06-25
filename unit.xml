@@ -1,96 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.30000000000000004" tests="20" failures="9">
-  <testsuite name="Root Suite" timestamp="2019-06-25T18:27:40" tests="0" failures="0" time="0">
+<testsuites name="Mocha Tests" time="0.281" tests="20" failures="4">
+  <testsuite name="Root Suite" timestamp="2019-06-25T19:21:03" tests="0" failures="0" time="0">
   </testsuite>
-  <testsuite name="FavoriteListings" timestamp="2019-06-25T18:27:40" tests="0" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0">
+  <testsuite name="FavoriteListings" timestamp="2019-06-25T19:21:03" tests="0" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0">
   </testsuite>
-  <testsuite name="isListingFavorited" timestamp="2019-06-25T18:27:40" tests="2" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0.001">
-    <testcase name="FavoriteListings isListingFavorited returns false when the listing is not favorited" time="0.001" classname="returns false when the listing is not favorited">
+  <testsuite name="isListingFavorited" timestamp="2019-06-25T19:21:03" tests="2" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0.001">
+    <testcase name="FavoriteListings isListingFavorited returns false when the listing is not favorited" time="0" classname="returns false when the listing is not favorited">
     </testcase>
-    <testcase name="FavoriteListings isListingFavorited returns true when the listing is favorited" time="0" classname="returns true when the listing is favorited">
+    <testcase name="FavoriteListings isListingFavorited returns true when the listing is favorited" time="0.001" classname="returns true when the listing is favorited">
     </testcase>
   </testsuite>
-  <testsuite name="addListing" timestamp="2019-06-25T18:27:40" tests="2" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0">
+  <testsuite name="addListing" timestamp="2019-06-25T19:21:03" tests="2" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0">
     <testcase name="FavoriteListings addListing adds a listing to favorites" time="0" classname="adds a listing to favorites">
     </testcase>
     <testcase name="FavoriteListings addListing only adds a listing to favorites once" time="0" classname="only adds a listing to favorites once">
     </testcase>
   </testsuite>
-  <testsuite name="removeListing" timestamp="2019-06-25T18:27:40" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0">
-    <testcase name="FavoriteListings removeListing removes a listing from favorites" time="0" classname="removes a listing from favorites">
+  <testsuite name="removeListing" timestamp="2019-06-25T19:21:03" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0.001">
+    <testcase name="FavoriteListings removeListing removes a listing from favorites" time="0.001" classname="removes a listing from favorites">
     </testcase>
   </testsuite>
-  <testsuite name="getFavorites" timestamp="2019-06-25T18:27:40" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0">
-    <testcase name="FavoriteListings getFavorites returns favorited listings" time="0" classname="returns favorited listings">
+  <testsuite name="getFavorites" timestamp="2019-06-25T19:21:03" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/FavoriteListings.js" failures="0" time="0.001">
+    <testcase name="FavoriteListings getFavorites returns favorited listings" time="0.001" classname="returns favorited listings">
     </testcase>
   </testsuite>
-  <testsuite name="Listing" timestamp="2019-06-25T18:27:40" tests="0" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/Listing.js" failures="0" time="0">
+  <testsuite name="Listing" timestamp="2019-06-25T19:21:03" tests="0" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/Listing.js" failures="0" time="0">
   </testsuite>
-  <testsuite name="#fromJSON" timestamp="2019-06-25T18:27:40" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/Listing.js" failures="0" time="0.001">
-    <testcase name="Listing #fromJSON should create a listing object from JSON returned from the Etsy API" time="0.001" classname="should create a listing object from JSON returned from the Etsy API">
+  <testsuite name="#fromJSON" timestamp="2019-06-25T19:21:03" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/Listing.js" failures="0" time="0">
+    <testcase name="Listing #fromJSON should create a listing object from JSON returned from the Etsy API" time="0" classname="should create a listing object from JSON returned from the Etsy API">
     </testcase>
   </testsuite>
-  <testsuite name="formatPrice" timestamp="2019-06-25T18:27:40" tests="2" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/Listing.js" failures="2" time="0.001">
-    <testcase name="Listing formatPrice should format USD price correctly" time="0.001" classname="should format USD price correctly">
-      <failure message="expected &apos;$10.00 undefined&apos; to equal &apos;$10.00 USD&apos;" type="AssertionError"><![CDATA[AssertionError: expected '$10.00 undefined' to equal '$10.00 USD'
-    at Context.<anonymous> (test/Listing.js:29:40)]]></failure>
+  <testsuite name="formatPrice" timestamp="2019-06-25T19:21:03" tests="2" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/Listing.js" failures="0" time="0">
+    <testcase name="Listing formatPrice should format USD price correctly" time="0" classname="should format USD price correctly">
     </testcase>
     <testcase name="Listing formatPrice should format GBP price correctly" time="0" classname="should format GBP price correctly">
-      <failure message="expected &apos;£30.00 undefined&apos; to equal &apos;£30.00 GBP&apos;" type="AssertionError"><![CDATA[AssertionError: expected '£30.00 undefined' to equal '£30.00 GBP'
-    at Context.<anonymous> (test/Listing.js:34:40)]]></failure>
     </testcase>
   </testsuite>
-  <testsuite name="setIsFavorite" timestamp="2019-06-25T18:27:40" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/Listing.js" failures="0" time="0">
+  <testsuite name="setIsFavorite" timestamp="2019-06-25T19:21:03" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/Listing.js" failures="0" time="0">
     <testcase name="Listing setIsFavorite should set the listing to be a favorite" time="0" classname="should set the listing to be a favorite">
     </testcase>
   </testsuite>
-  <testsuite name="app" timestamp="2019-06-25T18:27:40" tests="0" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="0" time="0">
+  <testsuite name="app" timestamp="2019-06-25T19:21:03" tests="0" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="0" time="0">
   </testsuite>
-  <testsuite name="Trending listings page" timestamp="2019-06-25T18:27:40" tests="3" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="1" time="0.20500000000000002">
-    <testcase name="app Trending listings page it should load the trending listings page" time="0.091" classname="it should load the trending listings page">
+  <testsuite name="Trending listings page" timestamp="2019-06-25T19:21:03" tests="3" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="0" time="0.20500000000000002">
+    <testcase name="app Trending listings page it should load the trending listings page" time="0.099" classname="it should load the trending listings page">
     </testcase>
-    <testcase name="app Trending listings page it should render a listing card correctly" time="0.045" classname="it should render a listing card correctly">
-      <failure message="expected &apos;€33.90 undefined&apos; to equal &apos;€33.90 EUR&apos;" type="AssertionError"><![CDATA[AssertionError: expected '€33.90 undefined' to equal '€33.90 EUR'
-    at Context.<anonymous> (test/app.js:59:13)
-    at process._tickCallback (internal/process/next_tick.js:178:7)]]></failure>
+    <testcase name="app Trending listings page it should render a listing card correctly" time="0.044" classname="it should render a listing card correctly">
     </testcase>
-    <testcase name="app Trending listings page it should switch between pages of trending lisitngs" time="0.069" classname="it should switch between pages of trending lisitngs">
+    <testcase name="app Trending listings page it should switch between pages of trending lisitngs" time="0.062" classname="it should switch between pages of trending lisitngs">
     </testcase>
   </testsuite>
-  <testsuite name="Favoriting listings" timestamp="2019-06-25T18:27:41" tests="3" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="2" time="0.065">
-    <testcase name="app Favoriting listings it favorites a listing" time="0.032" classname="it favorites a listing">
+  <testsuite name="Favoriting listings" timestamp="2019-06-25T19:21:04" tests="3" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="1" time="0.049">
+    <testcase name="app Favoriting listings it favorites a listing" time="0.02" classname="it favorites a listing">
     </testcase>
     <testcase name="app Favoriting listings does not favorite a listing more than once" time="0.004" classname="does not favorite a listing more than once">
-      <failure message="expected 2 to equal 1" type="AssertionError"><![CDATA[AssertionError: expected 2 to equal 1
-    at Context.<anonymous> (test/app.js:132:35)
-    at process._tickCallback (internal/process/next_tick.js:178:7)]]></failure>
     </testcase>
-    <testcase name="app Favoriting listings loads trending listings after favoriting and displays the listing as favorited" time="0.029" classname="loads trending listings after favoriting and displays the listing as favorited">
+    <testcase name="app Favoriting listings loads trending listings after favoriting and displays the listing as favorited" time="0.025" classname="loads trending listings after favoriting and displays the listing as favorited">
       <failure message="expected false to be true" type="AssertionError"><![CDATA[AssertionError: expected false to be true
     at Context.<anonymous> (test/app.js:145:121)
     at process._tickCallback (internal/process/next_tick.js:178:7)]]></failure>
     </testcase>
   </testsuite>
-  <testsuite name="Favorite listing page" timestamp="2019-06-25T18:27:41" tests="3" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="3" time="0.024">
-    <testcase name="app Favorite listing page it displays the favorite listing page" time="0.008" classname="it displays the favorite listing page">
-      <failure message="expected 2 to equal 1" type="AssertionError"><![CDATA[AssertionError: expected 2 to equal 1
-    at Context.<anonymous> (test/app.js:161:44)
-    at process._tickCallback (internal/process/next_tick.js:178:7)]]></failure>
+  <testsuite name="Favorite listing page" timestamp="2019-06-25T19:21:04" tests="3" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="2" time="0.022000000000000002">
+    <testcase name="app Favorite listing page it displays the favorite listing page" time="0.009" classname="it displays the favorite listing page">
     </testcase>
     <testcase name="app Favorite listing page it shows all listings on the favorite listings page as favorited" time="0.008" classname="it shows all listings on the favorite listings page as favorited">
-      <failure message="expected 3 to equal 2" type="AssertionError"><![CDATA[AssertionError: expected 3 to equal 2
-    at Context.<anonymous> (test/app.js:185:46)
+      <failure message="expected 1 to equal 2" type="AssertionError"><![CDATA[AssertionError: expected 1 to equal 2
+    at Context.<anonymous> (test/app.js:188:81)
     at process._tickCallback (internal/process/next_tick.js:178:7)]]></failure>
     </testcase>
-    <testcase name="app Favorite listing page orders listings by the number of favoriters" time="0.008" classname="orders listings by the number of favoriters">
-      <failure message="expected 3 to equal 2" type="AssertionError"><![CDATA[AssertionError: expected 3 to equal 2
-    at Context.<anonymous> (test/app.js:201:46)
+    <testcase name="app Favorite listing page orders listings by the number of favoriters" time="0.005" classname="orders listings by the number of favoriters">
+      <failure message="expected 539359874 to equal 484595996" type="AssertionError"><![CDATA[AssertionError: expected 539359874 to equal 484595996
+    at Context.<anonymous> (test/app.js:204:89)
     at process._tickCallback (internal/process/next_tick.js:178:7)]]></failure>
     </testcase>
   </testsuite>
-  <testsuite name="Un-favoriting listings" timestamp="2019-06-25T18:27:41" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="1" time="0.003">
-    <testcase name="app Un-favoriting listings it unfavorites a listing" time="0.003" classname="it unfavorites a listing">
-      <failure message="expected 3 to equal 1" type="AssertionError"><![CDATA[AssertionError: expected 3 to equal 1
+  <testsuite name="Un-favoriting listings" timestamp="2019-06-25T19:21:04" tests="1" file="/Users/derickgross/Documents/dev/Hackerrank/Etsy/favorite-listings-cjhom8e5b3g/test/app.js" failures="1" time="0.002">
+    <testcase name="app Un-favoriting listings it unfavorites a listing" time="0.002" classname="it unfavorites a listing">
+      <failure message="expected 2 to equal 1" type="AssertionError"><![CDATA[AssertionError: expected 2 to equal 1
     at Context.<anonymous> (test/app.js:219:35)
     at process._tickCallback (internal/process/next_tick.js:178:7)]]></failure>
     </testcase>

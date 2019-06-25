@@ -81,9 +81,15 @@ app.post('/favorite-listing', function(req, res, next) {
     .then(function(response) {
       var results = JSON.parse(response);
       var listing = Listing.fromJSON(results.results[0])
-      app.favoriteListings.addListing(listing)
+      if (!app.favoriteListings.isListingFavorited(listing)) {
+        app.favoriteListings.addListing(listing)
+      }
+      var listings = app.favoriteListings.getFavorites();
       
-      res.json({status: "success"});
+      res.render('favorites', {
+        is_favorite_listings_page: true,
+        listings: listings
+      });
     })
     .catch(function(err) {
       // render an error page if the request fails

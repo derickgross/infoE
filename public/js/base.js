@@ -8,6 +8,10 @@ $(function() {
       addFavorite(listing_id).done(function(result) {
         $favorite_icon.addClass('is-favorite')
       });
+
+      $.ajax("/favorites", {
+        method: "GET"
+      })
   });
 
   function addFavorite(listing_id) {
