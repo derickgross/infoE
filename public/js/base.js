@@ -5,9 +5,15 @@ $(function() {
       var listing_id = $favorite_icon.data('listing-id');
       var is_favorite = $favorite_icon.hasClass('is-favorite');
 
-      addFavorite(listing_id).done(function(result) {
-        $favorite_icon.addClass('is-favorite')
-      });
+      if (!is_favorite) {
+        addFavorite(listing_id).done(function(result) {
+          $favorite_icon.addClass('is-favorite')
+        });
+      } else {
+        removeFavorite(listing_id).done(function(result) {
+          $favorite_icon.removeClass('is-favorite')
+        });
+      }
 
       $.ajax("/favorites", {
         method: "GET"

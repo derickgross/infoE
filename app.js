@@ -106,7 +106,11 @@ app.delete('/favorite-listing', function(req, res, next) {
     .getInstance()
     .getListing(listing_id)
     .then(function(response) {
+      const results = JSON.parse(response);
+      const listing = Listing.fromJSON(results.results[0])
+      debugger;
       // TODO: remove the listing
+      app.favoriteListings.removeListing(listing)
       res.json({status: "success"});
     })
     .catch(function(err) {

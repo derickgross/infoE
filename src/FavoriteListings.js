@@ -18,7 +18,9 @@ FavoriteListings.prototype.addListing = function(listing) {
 };
 
 FavoriteListings.prototype.removeListing = function(listing) {
-	this.listings = this.listings.filter(x => x.listings_id !== listing.listings_id)
+	if (!!this.listings) {
+		this.listings = this.listings.filter(x => x.listings_id !== listing.listings_id)
+	}
 };
 
 FavoriteListings.prototype.getFavorites = function() {
