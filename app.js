@@ -1,6 +1,7 @@
 var express = require('express');
 var engine = require('ejs-locals');
 var bodyParser = require('body-parser');
+var morgan = require('morgan');
 
 var EtsyAPI = require('./src/EtsyAPI');
 var Listing = require('./src/Listing');
@@ -21,6 +22,9 @@ app.use(bodyParser.json());
 // for parsing application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// add morgan to middleware for messaging
+app.use(morgan('combined'));
+
 // Set up a single set of favorite listings
 app.favoriteListings = new FavoriteListings();
 
@@ -38,8 +42,40 @@ app.get('/', function(req, res, next) {
       // filter to only active listings as inactive have no images and cannot be displayed
       var listings = results.results.filter(listing => listing.state === "active");
 
-      // Create listing objects from the raw json
-      listings = listings.map(Listing.fromJSON);
+      console.log(`\r--------------------\r
+        listings count before reconstructing listings: ${listings.length}
+        \r--------------------\r
+        `)
+
+      // get favorite listings
+      var favoriteListings = app.favoriteListings.getFavorites();
+
+      // Create listing objects from the raw json, then update favorites
+      listings = listings.map(Listing.fromJSON)
+
+      console.log(`\r--------------------\r
+        listings count after reconstructing listings: ${listings.length}
+        \r--------------------\r
+        `)
+
+      listings = listings.map(function(listing) {
+        if (app.favoriteListings.isListingFavorited(listing)) {
+          listing.is_favorite = true;
+        }
+
+        return listing;
+      });
+
+      console.log(`\r--------------------\r
+        listings count after mapping listing favorites: ${listings.length}
+        \r--------------------\r
+        `)
+
+      console.log(`\r--------------------\r
+        count of favorites: ${listings.filter(l => l.is_favorite).length}
+        \r--------------------\r
+        `)
+
 
       // render the trending listings page with pagination
       res.render('index', {
@@ -61,9 +97,19 @@ app.get('/', function(req, res, next) {
 app.get('/favorites', function(req, res, next) {
   var listings = app.favoriteListings.getFavorites();
 
-  for (var i = 0; i < listings.length; i++) {
-    listings[i].setIsFavorite(true);
-  }
+  // for (var i = 0; i < listings.length; i++) {
+  //   listings[i].setIsFavorite(true);
+  // }
+
+  // for (let listing of listings) {
+  //   listing.setIsFavorite(true);
+  // }
+
+  listings = listings.map(listing => {
+    listing.setIsFavorite(true);
+
+    return listing;
+  })
 
   res.render('favorites', {
     is_favorite_listings_page: true,
@@ -81,15 +127,18 @@ app.post('/favorite-listing', function(req, res, next) {
     .then(function(response) {
       var results = JSON.parse(response);
       var listing = Listing.fromJSON(results.results[0])
+      listing.setIsFavorite(true);
+
+      console.log(`\r--------------------\r
+        /favorite-listing #${listing.listing_id}: listing.is_favorite? ${listing.is_favorite}
+        \r--------------------\r
+        `)
+
       if (!app.favoriteListings.isListingFavorited(listing)) {
         app.favoriteListings.addListing(listing)
       }
-      var listings = app.favoriteListings.getFavorites();
-      
-      res.render('favorites', {
-        is_favorite_listings_page: true,
-        listings: listings
-      });
+
+      res.redirect('/');
     })
     .catch(function(err) {
       // render an error page if the request fails
@@ -108,9 +157,10 @@ app.delete('/favorite-listing', function(req, res, next) {
     .then(function(response) {
       const results = JSON.parse(response);
       const listing = Listing.fromJSON(results.results[0])
-      debugger;
+
       // TODO: remove the listing
-      app.favoriteListings.removeListing(listing)
+      app.favoriteListings.removeListing(listing);
+
       res.json({status: "success"});
     })
     .catch(function(err) {

@@ -12,21 +12,45 @@ FavoriteListings.prototype.isListingFavorited = function(listing) {
 }
 
 FavoriteListings.prototype.addListing = function(listing) {
-	if (!this.listings.includes(listing)) {
-		this.listings.push(listing);
+	console.log(`addListing... current listing: ${listing.title}`);
+	console.log(`@@@ current listings before @@@`);
+	for (let l of this.listings) {
+		console.log(`-- ${l.title}`);
 	}
+	console.log(`\r`);
+	if (!this.isListingFavorited(listing)) {
+		this.listings.push(listing);
+		// return mergeSort(this.listings);
+	}
+
+	console.log(`@@@ current listings after @@@`);
+	for (let l of this.listings) {
+		console.log(`-- ${l.title}`);
+	}
+	console.log(`\r`);
+
+	this.listings =  mergeSort(this.listings);
 };
 
 FavoriteListings.prototype.removeListing = function(listing) {
-	if (this.listings.includes(listing)) {
-		this.listings = this.listings.filter(x => x.listings_id !== listing.listings_id)
+	console.log(`\r---------------\r
+		current listing_id: ${listing.listing_id}
+		\r---------------\r
+		`)
+
+	for (let i = 0; i < this.listings.length; i++) {
+		console.log(`\r---------------\r
+		listing #${i}: ${this.listings[i].listing_id}
+		\r---------------\r
+		`)
 	}
+	//if (this.isListingFavorited(listing)) {
+		this.listings = this.listings.filter(x => x.listing_id !== listing.listing_id)
+	//}
 };
 
 FavoriteListings.prototype.getFavorites = function() {
-	console.log(`first listing num_favorers: ${!!this.listings[0] ? this.listings[0].num_favorers : 'no listings'}`);
-  return mergeSort(this.listings);
-  //return this.listings
+  return this.listings
 }
 
 function mergeSort(array) {
@@ -35,7 +59,8 @@ function mergeSort(array) {
 
     const sortedListings =  mergeListingArrays(mergeSort(array), mergeSort(arrayRight));
 
-    console.log(`sorted listings num_favorers: ${sortedListings.map(listing => listing.num_favorers)}`);
+    sortedListings.map((listing, i) =>  console.log(`sorted listings listing #, num_favorers: ${i} ${listing.num_favorers}`));
+    
 
     return sortedListings;
   }
@@ -48,6 +73,10 @@ function mergeListingArrays(first, second) {
   const result = [];
 
   while (!!first.length && !!second.length) {
+  	console.log(`\r-------------\r
+  		first[0].num_favorers: ${first[0].num_favorers}
+  		second[0].num_favorers: ${second[0].num_favorers}
+  		\r-------------\r`)
     first[0].num_favorers >= second[0].num_favorers ? result.push(first.shift()) : result.push(second.shift())
   }
 

@@ -1,3 +1,5 @@
+var FavoriteListings = require('./FavoriteListings');
+
 var currency_symbols = {
   "USD": '$', // United States Dollar (USD)
   "CAD": '$', // Canadian Dollar (CAD)
