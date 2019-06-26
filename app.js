@@ -42,21 +42,11 @@ app.get('/', function(req, res, next) {
       // filter to only active listings as inactive have no images and cannot be displayed
       var listings = results.results.filter(listing => listing.state === "active");
 
-      console.log(`\r--------------------\r
-        listings count before reconstructing listings: ${listings.length}
-        \r--------------------\r
-        `)
-
       // get favorite listings
       var favoriteListings = app.favoriteListings.getFavorites();
 
       // Create listing objects from the raw json, then update favorites
       listings = listings.map(Listing.fromJSON)
-
-      console.log(`\r--------------------\r
-        listings count after reconstructing listings: ${listings.length}
-        \r--------------------\r
-        `)
 
       listings = listings.map(function(listing) {
         if (app.favoriteListings.isListingFavorited(listing)) {
@@ -65,17 +55,6 @@ app.get('/', function(req, res, next) {
 
         return listing;
       });
-
-      console.log(`\r--------------------\r
-        listings count after mapping listing favorites: ${listings.length}
-        \r--------------------\r
-        `)
-
-      console.log(`\r--------------------\r
-        count of favorites: ${listings.filter(l => l.is_favorite).length}
-        \r--------------------\r
-        `)
-
 
       // render the trending listings page with pagination
       res.render('index', {
@@ -128,11 +107,6 @@ app.post('/favorite-listing', function(req, res, next) {
       var results = JSON.parse(response);
       var listing = Listing.fromJSON(results.results[0])
       listing.setIsFavorite(true);
-
-      console.log(`\r--------------------\r
-        /favorite-listing #${listing.listing_id}: listing.is_favorite? ${listing.is_favorite}
-        \r--------------------\r
-        `)
 
       if (!app.favoriteListings.isListingFavorited(listing)) {
         app.favoriteListings.addListing(listing)
