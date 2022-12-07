@@ -17,7 +17,7 @@
     "debug": "~2.6.3",
     "ejs": "^2.6.1",
     "ejs-locals": "^1.0.2",
-    "express": "~4.15.2",
+    "express": "~4.17.3",
     "mocha": "^3.5.0",
     "mocha-junit-reporter": "^1.13.0",
     "mocha-multi-reporters": "^1.1.4",
